@@ -15,7 +15,7 @@ This project will allow users to find raids in their area and create events that
 
 ## Frontend Routes
 **Splash**
-- / -> Homepage welcomes new users/ existing users with auth modal
+- / -> Homepage welcomes new users/ existing users with auth modal 
 
 **Authentication**
 - /sign-up -> signs up for an account
@@ -24,9 +24,27 @@ This project will allow users to find raids in their area and create events that
 **Map View**
 - / Displays map with pins of all the gyms in area
 
+**User profile**
+- /user displays events user created and events user has joined
+
 **Gyms**
 - /gyms -> displays a list of all gyms
-- /gyms/id ->display info about single gym
+- /gyms/id/events -> display info about single gym including events
 
 **Raids**
-- /raids
+- /raids -> display all possible raids
+
+**Events**
+- /events displays all events in the area
+
+## API Documentation
+## Endpoints
+**User**
+- Login POST /api/auth/login
+- Sign Up POST /api/auth/signup
+- Log out GET /api/auth/logout
+
+**Gym**
+- Get all gyms GET -> /gyms
+- 
+
