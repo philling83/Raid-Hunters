@@ -49,16 +49,16 @@ This project will allow users to find raids in their area and create events that
 **Users**
 - Get all users GET /api/users
 - Create user event POST /api/users/<id>/create-event
-- Edit user event PUT /api/users/<id>/events/<id>
-- Delete user event DELETE /api/users/<id>/events/<id>
+- Edit user event PUT /api/users/<id>/events/id
+- Delete user event DELETE /api/users/<id>/events/id
 
 **Gyms**
 - Get all gyms GET -> /api/gyms
-- Get single gym GET -> /api/gyms/<id>
+- Get single gym GET -> /api/gyms/id
 
 **Raids**
 - Get all raids GET -> /api/raids
 
 **Events**
 - Get all events GET -> /api/events
-- Get single event GET -> /api/events/<id>
+- Get single event GET -> /api/events/id
