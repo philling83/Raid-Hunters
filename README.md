@@ -17,7 +17,7 @@ This project will allow users to find raids in their area and create events that
 
 ## Frontend Routes
 **Splash**
-- / -> Homepage welcomes new users/ existing users with auth modal 
+- / -> Homepage welcomes new users/ existing users with auth modal
 
 **Authentication**
 - /sign-up -> signs up for an account
@@ -62,3 +62,5 @@ This project will allow users to find raids in their area and create events that
 **Events**
 - Get all events GET -> /api/events
 - Get single event GET -> /api/events/id
+## Database and Schema
+![DB Schema](db-schema.png)
