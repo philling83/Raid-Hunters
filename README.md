@@ -62,5 +62,11 @@ This project will allow users to find raids in their area and create events that
 **Events**
 - Get all events GET -> /api/events
 - Get single event GET -> /api/events/id
+
+## Wireframes
+
+**HomePage**
+https://wireframe.cc/IU6uOF
+
 ## Database and Schema
 ![DB Schema](db-schema.png)
