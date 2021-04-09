@@ -1,8 +1,12 @@
-# Raid-Hunters
-
-# Introduction and Features
-
+# Welcome to Raid-Hunters
+# Introduction
 This project will allow users to find raids in their area and create events that allow users to team up to defeat raid bosses!
+
+# Features
+- **User Auth**: Users will be able to sign-up/login to their account to view/create their events
+- **Map View** : Users will be able to look at a map of all the gyms in their area.
+- **Events**: Logged in users will be able to CRUD an event for raiding. Users will be able to join other user's events.
+- **Comments**: Users will be able to comment on another user's event
 
 
 ## Technologies Used
@@ -67,6 +71,8 @@ This project will allow users to find raids in their area and create events that
 
 **HomePage**
 https://wireframe.cc/IU6uOF
+**Raids Page**
+https://wireframe.cc/u3GzrE
 
 ## Database and Schema
 ![DB Schema](db-schema.png)
