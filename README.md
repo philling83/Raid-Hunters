@@ -73,6 +73,8 @@ This project will allow users to find raids in their area and create events that
 https://wireframe.cc/IU6uOF
 **Raids Page**
 https://wireframe.cc/u3GzrE
+**Gyms Page**
+https://wireframe.cc/D3N1k0
 
 ## Database and Schema
 ![DB Schema](db-schema.png)
