@@ -6,7 +6,7 @@ class Raid(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     tier = db.Column(db.Integer, nullable=False)
-    gym_id =  db.Column(db.Integer, db.ForeignKey("gyms.id"), nullable=False)
+    gym_id =  db.Column(db.Integer, db.ForeignKey("gyms.id"))
     boss_id = db.Column(db.Integer, db.ForeignKey("bosses.id"), nullable=False)
 
     gym = db.relationship("Gym")
