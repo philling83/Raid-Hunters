@@ -19,7 +19,9 @@ class Event(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "tier": self.tier,
-            "gym_id": self.gym_id,
-            "boss_id": self.boss_id
+            "name": self.name,
+            "participants": self.participants,
+            "start_time": self.start_time,
+            "host_id": self.host_id,
+            "raid_id": self.raid_id,
         }
