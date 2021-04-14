@@ -8,6 +8,9 @@ class Raid(db.Model):
     tier = db.Column(db.Integer, nullable=False)
     gym_id =  db.Column(db.Integer, db.ForeignKey("gyms.id"), nullable=False)
     boss_id = db.Column(db.Integer, db.ForeignKey("bosses.id"), nullable=False)
+
+    gym = db.relationship("Gym")
+    boss = db.relationship("Boss")
     
 
     def to_dict(self):
