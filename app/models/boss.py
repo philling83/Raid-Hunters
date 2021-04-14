@@ -11,7 +11,6 @@ class Boss(db.Model):
     max_cp_range = db.Column(db.Integer, nullable=False)
     boosted_min_cp_range = db.Column(db.Integer, nullable=False)
     boosted_max_cp_range = db.Column(db.Integer, nullable=False)
-    type_id
 
     def to_dict(self):
         return {
