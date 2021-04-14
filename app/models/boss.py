@@ -1,4 +1,5 @@
 from .db import db
+from .boss_type import boss_types
 
 
 class Boss(db.Model):
@@ -11,6 +12,9 @@ class Boss(db.Model):
     max_cp_range = db.Column(db.Integer, nullable=False)
     boosted_min_cp_range = db.Column(db.Integer, nullable=False)
     boosted_max_cp_range = db.Column(db.Integer, nullable=False)
+
+    types = db.relationship("Type", secondary=boss_types, back_populates="bosses")
+
 
     def to_dict(self):
         return {

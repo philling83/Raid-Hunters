@@ -6,3 +6,4 @@ from .type import Type
 from .boss import Boss
 from .raid import Raid
 from .event import Event
+from .boss_type import boss_types
