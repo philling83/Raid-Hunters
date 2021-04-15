@@ -5,7 +5,7 @@ from app.models import db, User
 def seed_users():
 
     demo = User(username='Demo', email='demo@aa.io',
-                password='password')
+                password='password', team_id="3")
 
     db.session.add(demo)
 
@@ -16,5 +16,5 @@ def seed_users():
 # TRUNCATE Removes all the data from the table, and resets
 # the auto incrementing primary key
 def undo_users():
-    db.session.execute('TRUNCATE users RESTART IDENTITY;')
+    db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
     db.session.commit()
