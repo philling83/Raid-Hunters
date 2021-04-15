@@ -3,7 +3,6 @@ from .user import User
 from .team import Team
 from .gym import Gym
 from .type import Type
-from .boss import Boss
 from .raid import Raid
 from .event import Event
-from .boss_type import boss_types
+from .raid_pokemon_type import raid_pokemon_types
