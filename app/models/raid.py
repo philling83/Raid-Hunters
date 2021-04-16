@@ -7,13 +7,13 @@ class Raid(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     pokemon = db.Column(db.String(50), nullable=False, unique=True)
-    tier = db.Column(db.Integer, nullable=False)
+    tier = db.Column(db.String(50), nullable=False)
     url_img = db.Column(db.String(200), unique=True)
     min_cp_range = db.Column(db.Integer, nullable=False)
     max_cp_range = db.Column(db.Integer, nullable=False)
     boosted_min_cp_range = db.Column(db.Integer, nullable=False)
     boosted_max_cp_range = db.Column(db.Integer, nullable=False)
-    gym_id =  db.Column(db.Integer, db.ForeignKey("gyms.id"))
+    gym_id = db.Column(db.Integer, db.ForeignKey("gyms.id"))
 
     gym = db.relationship("Gym")
     types = db.relationship("Type", secondary=raid_pokemon_types, back_populates="raids")
