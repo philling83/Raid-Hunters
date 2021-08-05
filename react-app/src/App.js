@@ -7,9 +7,10 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
+import MapSimple from "./components/Map";
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(true);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -28,7 +29,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
+      <Route path="/" exact={true} authenticated={authenticated}>
+        <MapSimple />
+      </Route>
       <Route path="/login" exact={true}>
         <LoginForm
           authenticated={authenticated}
@@ -43,9 +47,6 @@ function App() {
       </ProtectedRoute>
       <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
         <User />
-      </ProtectedRoute>
-      <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-        <h1>My Home Page</h1>
       </ProtectedRoute>
     </BrowserRouter>
   );
