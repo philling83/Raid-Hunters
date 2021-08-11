@@ -12,11 +12,11 @@ seed_commands = AppGroup('seed')
 # Creates the `flask seed all` command
 @seed_commands.command('all')
 def seed():
-    seed_teams()
-    seed_users()
-    seed_types()
+    # seed_teams()
+    # seed_users()
+    # seed_types()
     # seed_raids()
-    # seed_NJgyms()
+    seed_NJgyms()
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
