@@ -23,8 +23,8 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_NJgyms()
-    undo_raids()
-    undo_types()
-    undo_teams()
-    undo_users()
+    # undo_raids()
+    # undo_types()
+    # undo_teams()
+    # undo_users()
     # Add other undo functions here
