@@ -7,8 +7,8 @@ class Gym(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False, unique=True)
     description = db.Column(db.String(200), nullable=False, unique=True)
-    latitude = db.Column(db.Integer, nullable=False)
-    longitude = db.Column(db.Integer, nullable=False)
+    latitude = db.Column(db.Numeric, nullable=False)
+    longitude = db.Column(db.Numeric, nullable=False)
     location = db.Column(db.String(50), nullable=False)
     url_img = db.Column(db.String(200), unique=True)
     
