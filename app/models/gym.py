@@ -18,8 +18,8 @@ class Gym(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "latitude": self.latitude,
-            "longitude": self.longitude,
+            "latitude": str(self.latitude),
+            "longitude": str(self.longitude),
             "location": self.location,
             "url_img": self.url_img,
         }
