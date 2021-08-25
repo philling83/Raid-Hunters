@@ -10,6 +10,7 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.raid_routes import raid_routes
 from .api.gym_routes import gym_routes
+from .api.team_routes import team_routes
 
 from .seeds import seed_commands
 
