@@ -11,7 +11,7 @@ class Gym(db.Model):
     longitude = db.Column(db.Numeric, nullable=False)
     location = db.Column(db.String(50), nullable=False)
     url_img = db.Column(db.String(200), unique=True)
-    
+
 
     def to_dict(self):
         return {
