@@ -5,8 +5,9 @@ export const receiveGyms = createAction("RECEIVE_GYMS");
 export const fetchGyms = () => async dispatch => {
     try {
         const res = await fetch("/api/gyms");
-        dispatch(receiveGyms(res.data));
+        const resJSON = await res.json()
+        dispatch(receiveGyms(resJSON));
     } catch (err) {
-        console.log("Gyms broken");
+        console.log(err, "Gyms broken");
     };
 };

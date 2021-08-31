@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -9,7 +11,7 @@ import User from "./components/User";
 import { authenticate } from "./services/auth";
 import MapSimple from "./components/Map";
 
-function App() {
+function App({ store }) {
   const [authenticated, setAuthenticated] = useState(true);
   const [loaded, setLoaded] = useState(false);
 
@@ -28,27 +30,29 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Route path="/" exact={true} authenticated={authenticated}>
-        <NavBar setAuthenticated={setAuthenticated} />
-        <MapSimple />
-      </Route>
-      <Route path="/login" exact={true}>
-        <LoginForm
-          authenticated={authenticated}
-          setAuthenticated={setAuthenticated}
-        />
-      </Route>
-      <Route path="/sign-up" exact={true}>
-        <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
-      </Route>
-      <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
-        <UsersList/>
-      </ProtectedRoute>
-      <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
-        <User />
-      </ProtectedRoute>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Route path="/" exact={true} authenticated={authenticated}>
+          <NavBar setAuthenticated={setAuthenticated} />
+          <MapSimple />
+        </Route>
+        <Route path="/login" exact={true}>
+          <LoginForm
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}
+          />
+        </Route>
+        <Route path="/sign-up" exact={true}>
+          <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
+        </Route>
+        <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
+          <UsersList/>
+        </ProtectedRoute>
+        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+          <User />
+        </ProtectedRoute>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

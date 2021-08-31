@@ -1,4 +1,4 @@
-// import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useSelector } from 'react'
 // import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,10 +7,18 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { connect } from "react-redux";
 
 import "./Map.css";
+import { fetchGyms } from "../actions/gyms_actions";
 
-function MapSimple() {
+function MapSimple(props) {
+
+    useEffect(() => {
+        props.fetch()
+    }, [])
+    
+    console.log(props.gyms)
 
     const useStyles = makeStyles({
         root: {
@@ -69,4 +77,12 @@ function MapSimple() {
     );
 };
 
-export default MapSimple;
+const msp = state => ({
+    gyms: state.gyms ? Object.values(state.gyms) : []
+});
+
+const mdp = dispatch => ({
+    fetch: () => dispatch(fetchGyms())
+})
+
+export default connect(msp, mdp)(MapSimple);

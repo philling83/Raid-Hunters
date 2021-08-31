@@ -8,7 +8,8 @@ export const gymsReducer = createReducer(initialState, builder => {
     builder
         .addCase("RECEIVE_GYMS", (state, action) => {
             const gyms = {};
-            action.payload.map(gym => gyms[gym.id] = gym);
+            action.payload.gyms.map(gym => gyms[gym.id] = gym);
             state.gyms = gyms;
+            return state
         })
 });
