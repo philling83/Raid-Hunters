@@ -4,7 +4,7 @@ const initialState = {
     gyms: {},
 };
 
-export const gymReducer = createReducer(initialState, builder => {
+export const gymsReducer = createReducer(initialState, builder => {
     builder
         .addCase("RECEIVE_GYMS", (state, action) => {
             const gyms = {};
