@@ -37,5 +37,8 @@
       "not op_mini all"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "@playwright/test": "^1.14.1"
+  }
 }
