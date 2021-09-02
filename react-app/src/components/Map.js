@@ -12,13 +12,11 @@ import { connect } from "react-redux";
 import "./Map.css";
 import { fetchGyms } from "../actions/gyms_actions";
 
-function MapSimple(props) {
+function MapSimple({ fetch, gyms }) {
 
     useEffect(() => {
-        props.fetch()
+        fetch()
     }, [])
-    
-    console.log(props.gyms)
 
     const useStyles = makeStyles({
         root: {
@@ -82,7 +80,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-    fetch: () => dispatch(fetchGyms())
+    fetch: () => dispatch(fetchGyms()),
 })
 
 export default connect(msp, mdp)(MapSimple);

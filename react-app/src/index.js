@@ -5,14 +5,14 @@ import "./index.css";
 import App from "./App";
 import { configureAppStore } from "./store/store";
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 
   let initialState = {
     gyms: null,
   };
 
   let store = configureAppStore(initialState);
-  window.getState = store.getState;
+  // window.getState = store.getState;
 
   ReactDOM.render(
     <React.StrictMode>
@@ -20,4 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
     </React.StrictMode>,
     document.getElementById('root')
   );
-})
+// })
