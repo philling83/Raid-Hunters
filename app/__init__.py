@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.raid_routes import raid_routes
 from .api.gym_routes import gym_routes
 from .api.team_routes import team_routes
+from .api.event_routes import event_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix="/api/auth")
 app.register_blueprint(raid_routes, url_prefix="/api/raids")
 app.register_blueprint(gym_routes, url_prefix="/api/gyms")
 app.register_blueprint(team_routes, url_prefix="/api/teams")
+app.register_blueprint(event_routes, url_prefix="/api/events")
 db.init_app(app)
 Migrate(app, db)
 
