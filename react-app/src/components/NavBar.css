@@ -1,0 +1,32 @@
+.navbar_container {
+    background: #55d6aa;
+    border: 1px solid #55d6aa;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    list-style: none;
+    padding-right: 10px;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav * {
+    text-decoration: none;
+}
+
+.link {
+    background-image: linear-gradient(90deg, red, blue);
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 300ms ease;
+}
+
+.link:hover {
+    background-size: 100% 3px;
+}

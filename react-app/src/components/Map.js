@@ -19,24 +19,24 @@ function MapSimple({ fetch, gyms }) {
         console.log(gyms)
     }, [gyms.length])
 
-    // const useStyles = makeStyles({
-    //     root: {
-    //         minWidth: 275,
-    //     },
-    //     bullet: {
-    //         display: 'inline-block',
-    //         margin: '0 2px',
-    //         transform: 'scale(0.8)',
-    //     },
-    //     title: {
-    //         fontSize: 14,
-    //     },
-    //     pos: {
-    //         marginBottom: 12,
-    //     },
-    // });
+    const useStyles = makeStyles({
+        root: {
+            minWidth: 275,
+        },
+        bullet: {
+            display: 'inline-block',
+            margin: '0 2px',
+            transform: 'scale(0.8)',
+        },
+        title: {
+            fontSize: 25,
+        },
+        pos: {
+            marginBottom: 12,
+        },
+    });
 
-    // const classes = useStyles();
+    const classes = useStyles();
 
     const generateGymMarkers = () => {
         return gyms.map((gym, i) => 
@@ -45,7 +45,7 @@ function MapSimple({ fetch, gyms }) {
                     <Card>
                         <CardContent>
                             <img src={gym.url_img} alt="gym" height="200"/>
-                            <Typography>
+                            <Typography className={classes.title}>
                                 {gym.name}
                             </Typography>
                             <Typography>
@@ -53,11 +53,37 @@ function MapSimple({ fetch, gyms }) {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small">
-                                Add Event
-                            </Button>
+                            <div className="popup_footer">
+                                <Typography>
+                                    Events
+                                </Typography>
+                                <Button size="small">
+                                    Add Event
+                                </Button>
+                            </ div>
                         </CardActions>
                     </Card>
+                    {/* <Card className={classes.root}>
+                        <CardContent>
+                            <Typography className={classes.title} color="textSecondary" gutterBottom>
+                                Word of the Day
+                            </Typography>
+                            <Typography variant="h5" component="h2">
+                                be{bull}nev{bull}o{bull}lent
+                            </Typography>
+                            <Typography className={classes.pos} color="textSecondary">
+                                adjective
+                            </Typography>
+                            <Typography variant="body2" component="p">
+                                well meaning and kindly.
+                                <br />
+                                {'"a benevolent smile"'}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Learn More</Button>
+                        </CardActions>
+                    </Card> */}
                 </Popup>
             </ Marker>
         )
