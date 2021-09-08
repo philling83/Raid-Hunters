@@ -16,7 +16,7 @@ function MapSimple({ fetch, gyms }) {
 
     useEffect(() => {
         fetch()
-    }, [])
+    }, [gyms.length])
 
     const useStyles = makeStyles({
         root: {
