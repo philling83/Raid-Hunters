@@ -10,9 +10,6 @@ def seed_NJgyms():
 
     db.session.add(gym1)
     db.session.add(gym2)
-    # db.session.add(name="", description="", latitude="", longitude="", location="", url_img="")
-    # db.session.add(name="", description="", latitude="", longitude="", location="", url_img="")
-    # db.session.add(name="", description="", latitude="", longitude="", location="", url_img="")
 
     db.session.commit()
 
