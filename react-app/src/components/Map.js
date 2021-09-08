@@ -16,37 +16,8 @@ function MapSimple({ fetch, gyms }) {
 
     useEffect(() => {
         fetch()
+        console.log(gyms)
     }, [gyms.length])
-
-    const generateGymMarkers = () => {
-        return gyms.map((gym, i) => 
-            <Marker position={[gym.latitude, gym.longitude]}>
-                <Popup>
-                    <Card className={classes.root}>
-                        <CardContent>
-                            <Typography className={classes.title} color="textSecondary" gutterBottom>
-                                Word of the Day
-                            </Typography>
-                            <Typography variant="h5" component="h2">
-                                be{bull}nev{bull}o{bull}lent
-                            </Typography>
-                            <Typography className={classes.pos} color="textSecondary">
-                                adjective
-                            </Typography>
-                            <Typography variant="body2" component="p">
-                                well meaning and kindly.
-                                <br />
-                                {'"a benevolent smile"'}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Learn More</Button>
-                        </CardActions>
-                    </Card>
-                </Popup>
-            </ Marker>
-        )
-    }
 
     // const useStyles = makeStyles({
     //     root: {
@@ -66,9 +37,31 @@ function MapSimple({ fetch, gyms }) {
     // });
 
     // const classes = useStyles();
-    // const bull = <span className={classes.bullet}>•</span>;
 
-    // let mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    const generateGymMarkers = () => {
+        return gyms.map((gym, i) => 
+            <Marker key={i} position={[gym.latitude, gym.longitude]}>
+                <Popup>
+                    <Card>
+                        <CardContent>
+                            <img src={gym.url_img} alt="gym" height="200"/>
+                            <Typography>
+                                {gym.name}
+                            </Typography>
+                            <Typography>
+                                {gym.description}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">
+                                Add Event
+                            </Button>
+                        </CardActions>
+                    </Card>
+                </Popup>
+            </ Marker>
+        )
+    }
 
     return (
         <MapContainer className="map_container" center={ [40.783, -74.698]} zoom={13} scrollWheelZoom={false}>
