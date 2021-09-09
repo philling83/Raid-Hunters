@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
 from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -45,12 +45,18 @@ Migrate(app, db)
 # Application Security
 CORS(app)
 
+
 @app.before_request
 def before_request():
-    if not request.is_secure:
-        url = request.url.replace('http://', 'https://', 1)
-        code = 301
-        return redirect(url, code=code)
+    if app.env == "development":
+        return
+    if request.is_secure:
+        return
+
+    url = request.url.replace("http://", "https://", 1)
+    code = 301
+    return redirect(url, code=code)
+
 
 @app.after_request
 def inject_csrf_token(response):
