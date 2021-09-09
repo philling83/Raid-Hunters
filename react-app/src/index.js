@@ -9,6 +9,7 @@ import { configureAppStore } from "./store/store";
 
   let initialState = {
     gyms: null,
+    raids: null,
   };
 
   let store = configureAppStore(initialState);
