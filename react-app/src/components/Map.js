@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useSelector } from 'react'
+import React, { useEffect, useRef, useState, useSelector } from 'react';
 // import L from 'leaflet'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { makeStyles } from '@material-ui/core/styles';
