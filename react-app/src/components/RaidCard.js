@@ -27,10 +27,10 @@ const RaidCard = ({ raids }) => {
                             {raid.pokemon}
                         </Typography>
                         <Typography>
-                            {raid.min_cp_range} - {raid.max_cp_range}
+                            CP Range: {raid.min_cp_range} - {raid.max_cp_range}
                         </Typography>
                         <Typography>
-                            {raid.boosted_min_cp_range} - {raid.boosted_max_cp_range}
+                            Boosted CP Range: {raid.boosted_min_cp_range} - {raid.boosted_max_cp_range}
                         </Typography>
                     </CardContent>
                 </Card>
