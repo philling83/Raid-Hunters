@@ -32,4 +32,5 @@ class Raid(db.Model):
             "boosted_max_cp_range": self.boosted_max_cp_range,
             "gym_id": self.gym_id,
             "is_active": self.is_active,
+            "types": [type.name for type in self.types],
         }
