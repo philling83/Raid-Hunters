@@ -1,0 +1,7 @@
+.raids_container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    margin: 0 auto;
+    width: 75%;
+}

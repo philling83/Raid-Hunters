@@ -8,17 +8,17 @@ import Typography from '@material-ui/core/Typography';
 import "./RaidCard.css";
 import { fetchRaids } from "../actions/raids_actions";
 
-const RaidCard = ({ fetch, raids }) => {
+const RaidCard = ({ raids }) => {
     
-    useEffect(() => {
-        fetch();
-        console.log(raids);
-    }, [raids.length]);
+    // useEffect(() => {
+    //     fetch();
+    //     console.log(raids);
+    // }, [raids.length]);
 
     return raids.map((raid, i) =>
         <div className="flip-card">
             <div className="flip-card-inner">
-                <Card key={i} variant="outlined" className="raid_card flip-card-front">
+                <Card variant="outlined" className="raid_card flip-card-front">
                     <CardContent>
                         <img src={raid.url_img} alt={raid.pokemon} />
                         <Typography>
@@ -26,10 +26,16 @@ const RaidCard = ({ fetch, raids }) => {
                         </Typography>
                     </CardContent>
                 </Card>
-                <Card key={i} variant="outlined" className="raid_card flip-card-back">
+                <Card variant="outlined" className="raid_card flip-card-back">
                     <CardContent>
                         <Typography>
                             {raid.pokemon}
+                        </Typography>
+                        <Typography>
+                            {raid.min_cp_range} - {raid.max_cp_range}
+                        </Typography>
+                        <Typography>
+                            {raid.boosted_min_cp_range} - {raid.boosted_max_cp_range}
                         </Typography>
                     </CardContent>
                 </Card>
@@ -38,12 +44,12 @@ const RaidCard = ({ fetch, raids }) => {
     )
 };
 
-const msp = state => ({
-    raids: state.raids ? Object.values(state.raids) : []
-});
+// const msp = state => ({
+//     raids: state.raids ? Object.values(state.raids) : []
+// });
 
-const mdp = dispatch => ({
-    fetch: () => dispatch(fetchRaids()),
-})
+// const mdp = dispatch => ({
+//     fetch: () => dispatch(fetchRaids()),
+// })
 
-export default connect(msp, mdp)(RaidCard);
+export default RaidCard;

@@ -10,7 +10,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import MapSimple from "./components/Map";
-import RaidCard from "./components/RaidCard";
+import Raid from "./components/Raid";
 
 function App({ store }) {
   const [authenticated, setAuthenticated] = useState(true);
@@ -39,7 +39,7 @@ function App({ store }) {
         </Route>
         <Route path="/raids" exact={true}>
           <NavBar />
-          <RaidCard />
+          <Raid />
         </Route>  
         <Route path="/login" exact={true}>
           <LoginForm
