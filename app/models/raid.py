@@ -13,6 +13,7 @@ class Raid(db.Model):
     max_cp_range = db.Column(db.Integer, nullable=False)
     boosted_min_cp_range = db.Column(db.Integer, nullable=False)
     boosted_max_cp_range = db.Column(db.Integer, nullable=False)
+    is_active = db.Column(db.Boolean, nullable=False)
     gym_id = db.Column(db.Integer, db.ForeignKey("gyms.id"))
 
     gym = db.relationship("Gym")

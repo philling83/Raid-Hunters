@@ -41,7 +41,7 @@ function MapSimple({ fetch, gyms }) {
                                 {gym.description}
                             </Typography>
                         </CardContent>
-                        <CardActions>
+                        {/* <CardActions>
                             <div className="popup_footer">
                                 <Typography>
                                     Events
@@ -50,7 +50,7 @@ function MapSimple({ fetch, gyms }) {
                                     Add Event
                                 </Button>
                             </ div>
-                        </CardActions>
+                        </CardActions> */}
                     </Card>
                     {/* <Card className={classes.root}>
                         <CardContent>

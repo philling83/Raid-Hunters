@@ -6,14 +6,13 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 import "./RaidCard.css";
-import { fetchRaids } from "../actions/raids_actions";
 
 const RaidCard = ({ raids }) => {
 
     return raids.map((raid, i) =>
         <div className="flip-card">
             <div className="flip-card-inner">
-                <Card variant="outlined" className="raid_card flip-card-front">
+                <Card variant="outlined" className="raid_card flip-card-front" style={{ backgroundColor: "#bbb" }}>
                     <CardContent>
                         <img src={raid.url_img} alt={raid.pokemon} />
                         <Typography>
@@ -21,7 +20,7 @@ const RaidCard = ({ raids }) => {
                         </Typography>
                     </CardContent>
                 </Card>
-                <Card variant="outlined" className="raid_card flip-card-back">
+                <Card variant="outlined" className="raid_card flip-card-back" style={{ backgroundColor: "#55d6aa" }}>
                     <CardContent>
                         <Typography>
                             {raid.pokemon}
@@ -36,7 +35,7 @@ const RaidCard = ({ raids }) => {
                 </Card>
             </div> 
         </div>
-    )
+    );
 };
 
 export default RaidCard;
