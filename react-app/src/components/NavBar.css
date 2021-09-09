@@ -2,12 +2,30 @@
     background: #55d6aa;
     border: 1px solid #55d6aa;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    height: 70px;
+    /* align-items: center; */
+}
+
+.empty_div {
+    width: 15%;
+}
+
+/* .logo_container {
+    display: flex;
+} */
+
+.logo {
+    /* position: absolute; */
+    /* width: 100%; */
+    /* border: 1px solid black; */
+    padding-left: 30px;
 }
 
 nav ul {
     list-style: none;
     padding-right: 10px;
+    padding-top: 5px;
 }
 
 nav li {

@@ -4,10 +4,15 @@ import Typography from '@material-ui/core/Typography';
 
 import "./NavBar.css";
 import LogoutButton from './auth/LogoutButton';
+import Logo from "../assets/logo.png";
 
 const NavBar = ({ setAuthenticated }) => {
   return (
     <div className="navbar_container">
+      <div className="empty_div" />
+      <div className="logo_container">
+        <img src={Logo} alt="logo" className="logo" />
+      </div>
       <nav>
         <ul>
           <li className="link">
