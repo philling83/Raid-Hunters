@@ -9,11 +9,6 @@ import "./RaidCard.css";
 import { fetchRaids } from "../actions/raids_actions";
 
 const RaidCard = ({ raids }) => {
-    
-    // useEffect(() => {
-    //     fetch();
-    //     console.log(raids);
-    // }, [raids.length]);
 
     return raids.map((raid, i) =>
         <div className="flip-card">
@@ -43,13 +38,5 @@ const RaidCard = ({ raids }) => {
         </div>
     )
 };
-
-// const msp = state => ({
-//     raids: state.raids ? Object.values(state.raids) : []
-// });
-
-// const mdp = dispatch => ({
-//     fetch: () => dispatch(fetchRaids()),
-// })
 
 export default RaidCard;

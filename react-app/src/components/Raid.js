@@ -23,25 +23,70 @@ const Raid = ({ fetch, raids }) => {
 
         return (
             <RaidCard raids={megaRaids}/>
-        )
-    }
+        );
+    };
+
+    const generateRaidTierFive = () => {
+        const tierFiveRaids = [];
+        
+        raids.map(raid => {
+            if (raid.tier === "5") {
+                tierFiveRaids.push(raid);
+            };
+        });
+
+        return (
+            <RaidCard raids={tierFiveRaids}/>
+        );
+    };
+
+    const generateRaidTierThree = () => {
+        const tierThreeRaids = [];
+        
+        raids.map(raid => {
+            if (raid.tier === "3") {
+                tierThreeRaids.push(raid);
+            };
+        });
+
+        return (
+            <RaidCard raids={tierThreeRaids}/>
+        );
+    };
+
+    const generateRaidTierOne = () => {
+        const tierOneRaids = [];
+        
+        raids.map(raid => {
+            if (raid.tier === "mega") {
+                tierOneRaids.push(raid);
+            };
+        });
+
+        return (
+            <RaidCard raids={tierOneRaids}/>
+        );
+    };
 
     return (
         <div className="raids_container">
             <div className="raids_op">
                 <h1>
                     Tier Mega
+                    {generateRaidTierMega()}
                 </h1>
-                {generateRaidTierMega()}
                 <h1>
                     Tier 5
+                    {generateRaidTierFive()}
                 </h1>
             </div>
             <h1 className="raids_tier3">
                 Tier 3
+                {generateRaidTierThree()}
             </h1>
             <h1 className="raids_tier1">
                 Tier 1
+                {generateRaidTierOne()}
             </h1>
         </div>
     )
