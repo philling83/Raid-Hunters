@@ -14,9 +14,16 @@ const RaidCard = ({ fetch, raids }) => {
         console.log(raids);
     }, [raids.length]);
 
-    return raids.map((raid, i) => {
-
-    })
+    return raids.map((raid, i) => 
+        <Card key={i}>
+            <CardContent>
+                <img src={raid.url_img} alt={raid.pokemon} />
+                <Typography>
+                    {raid.pokemon}
+                </Typography>
+            </CardContent>
+        </Card>
+    )
 };
 
 const msp = state => ({
