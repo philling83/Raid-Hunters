@@ -16,9 +16,11 @@ const Raid = ({ fetch, raids }) => {
         const megaRaids = [];
         
         raids.map(raid => {
-            if (raid.tier === "mega") {
+            if (raid.tier === "mega" && raid.is_active === true) {
                 megaRaids.push(raid);
             };
+
+            return megaRaids;
         });
 
         return (
@@ -30,7 +32,7 @@ const Raid = ({ fetch, raids }) => {
         const tierFiveRaids = [];
         
         raids.map(raid => {
-            if (raid.tier === "5") {
+            if (raid.tier === "5" && raid.is_active === true) {
                 tierFiveRaids.push(raid);
             };
 
@@ -46,7 +48,7 @@ const Raid = ({ fetch, raids }) => {
         const tierThreeRaids = [];
         
         raids.map(raid => {
-            if (raid.tier === "3") {
+            if (raid.tier === "3" && raid.is_active === true) {
                 tierThreeRaids.push(raid);
             };
 
@@ -62,7 +64,7 @@ const Raid = ({ fetch, raids }) => {
         const tierOneRaids = [];
         
         raids.map(raid => {
-            if (raid.tier === "1") {
+            if (raid.tier === "1" && raid.is_active === true) {
                 tierOneRaids.push(raid);
             };
 
