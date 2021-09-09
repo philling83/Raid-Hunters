@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import Typography from '@material-ui/core/Typography';
 
 import "./NavBar.css";
+import LogoutButton from './auth/LogoutButton';
 
 const NavBar = ({ setAuthenticated }) => {
   return (
@@ -11,7 +12,9 @@ const NavBar = ({ setAuthenticated }) => {
         <ul>
           <li className="link">
             <NavLink to="/" exact={true} activeClassName="active">
-              Home
+              <Typography>
+                Home
+              </Typography>
             </NavLink>
           </li>
           {/* <li>
@@ -21,7 +24,9 @@ const NavBar = ({ setAuthenticated }) => {
           </li> */}
           <li className="link">
             <NavLink to="/raids" exact={true} activeClassName="active">
-              Raids
+              <Typography> 
+                Raids
+              </Typography>
             </NavLink>
           </li>
           {/* <li>
